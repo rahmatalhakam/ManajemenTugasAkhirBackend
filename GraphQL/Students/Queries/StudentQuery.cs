@@ -8,10 +8,11 @@ namespace ManajemenTugasAkhirGeologi.GraphQL.Students.Queries;
 
 [ExtendObjectType(Name = "Query")]
 [Obsolete]
-[Authorize]
+
 public class StudentQuery
 {
 
+    [Authorize]
     [UsePaging]
     [UseFiltering]
     [UseSorting]

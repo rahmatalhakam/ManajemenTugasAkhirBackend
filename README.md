@@ -4,6 +4,13 @@ Todo
 3. create unit test
 4. mbuat data seeder atleast utk admin 🆗
 5. add modifiedBy dan createdBy
+6. Refresh token
+
+Bugs or features?
+1. not yet
+
+Note:
+1. [Authorize] attribute should be used on method level
 
 Web info tutorial:
 - JWT: https://www.c-sharpcorner.com/article/jwt-authentication-and-authorization-in-net-6-0-with-identity-framework/ 

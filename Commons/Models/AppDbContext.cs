@@ -9,7 +9,7 @@ namespace ManajemenTugasAkhirGeologi.Commons.Models;
 public class AppDbContext : IdentityDbContext
 {
     public AppDbContext(DbContextOptions options) : base(options) { }
-    public DbSet<Student> Students { get; set; }
+    public DbSet<Student> Students { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
