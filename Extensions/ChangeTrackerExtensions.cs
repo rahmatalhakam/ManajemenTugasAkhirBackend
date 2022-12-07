@@ -6,7 +6,7 @@ namespace ManajemenTugasAkhirGeologi.Extensions;
 
 public static class ChangeTrackerExtensions
 {
-    public static void SetAuditProperties(this ChangeTracker changeTracker)
+    public static void SetAuditProperties(this ChangeTracker changeTracker, Guid userId)
     {
         changeTracker.DetectChanges();
         IEnumerable<EntityEntry> entities = changeTracker.Entries().Where
@@ -21,10 +21,12 @@ public static class ChangeTrackerExtensions
             IEntityBase entity = (IEntityBase)entry.Entity;
 
             entity.DateModified = DateTime.UtcNow;
+            entity.ModifiedBy = userId;
 
             if (entry.State == EntityState.Added)
             {
                 entity.DateCreated = DateTime.UtcNow;
+                entity.CreatedBy = userId;
             }
             if (entry.State == EntityState.Deleted)
             {

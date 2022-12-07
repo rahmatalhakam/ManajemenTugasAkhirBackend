@@ -1,6 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using ManajemenTugasAkhirGeologi.Commons.Contracts;
 using ManajemenTugasAkhirGeologi.GraphQL.Authorizations.CustomModels;
 using ManajemenTugasAkhirGeologi.GraphQL.Authorizations.Inputs;
 using ManajemenTugasAkhirGeologi.GraphQL.Authorizations.Services.Interfaces;
@@ -35,7 +36,7 @@ public class LoginService : ILoginService
             var authClaims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.UserName),
-                new Claim("userid", user.Id),
+                new Claim(AppConstants.UserIdClaim, user.Id),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
 

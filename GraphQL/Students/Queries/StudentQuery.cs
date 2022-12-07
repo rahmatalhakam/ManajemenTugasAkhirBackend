@@ -6,9 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ManajemenTugasAkhirGeologi.GraphQL.Students.Queries;
 
-[ExtendObjectType(Name = "Query")]
+[ExtendObjectType(Name = AppConstants.Query)]
 [Obsolete]
-
 public class StudentQuery
 {
 

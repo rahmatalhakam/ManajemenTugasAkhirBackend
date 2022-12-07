@@ -1,15 +1,14 @@
 using System.Text;
 using FluentValidation;
 using ManajemenTugasAkhirGeologi.Commons.Models;
-using ManajemenTugasAkhirGeologi.ErrorFilters;
 using ManajemenTugasAkhirGeologi.Extensions;
 using ManajemenTugasAkhirGeologi.GraphQL.Authorizations.Services.Implementations;
 using ManajemenTugasAkhirGeologi.GraphQL.Authorizations.Services.Interfaces;
-using ManajemenTugasAkhirGeologi.GraphQL.Students.Mutations;
-using ManajemenTugasAkhirGeologi.GraphQL.Students.Queries;
 using ManajemenTugasAkhirGeologi.GraphQL.Students.Services.Implementations;
 using ManajemenTugasAkhirGeologi.GraphQL.Students.Services.Interfaces;
 using ManajemenTugasAkhirGeologi.GraphQL.Students.Validators;
+using ManajemenTugasAkhirGeologi.GraphQL.Users.Services.Implementations;
+using ManajemenTugasAkhirGeologi.GraphQL.Users.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -58,6 +57,7 @@ builder.Services.AddAuthentication(options =>
 }); ;
 
 builder.Services.AddTransient<DbInitializer>();
+builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddControllers();

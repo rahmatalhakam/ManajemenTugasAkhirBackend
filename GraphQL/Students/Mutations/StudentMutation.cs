@@ -1,12 +1,13 @@
 using System.Security.Claims;
 using HotChocolate.AspNetCore.Authorization;
+using ManajemenTugasAkhirGeologi.Commons.Contracts;
 using ManajemenTugasAkhirGeologi.Commons.Models.Entities;
 using ManajemenTugasAkhirGeologi.GraphQL.Students.Inputs;
 using ManajemenTugasAkhirGeologi.GraphQL.Students.Services.Interfaces;
 
 namespace ManajemenTugasAkhirGeologi.GraphQL.Students.Mutations;
 
-[ExtendObjectType(Name = "Mutation")]
+[ExtendObjectType(Name = AppConstants.Mutation)]
 [Obsolete]
 public class StudentMutation
 {
