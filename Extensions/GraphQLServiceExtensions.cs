@@ -21,9 +21,10 @@ public static class GraphQLServiceExtensions
             .AddMutationType(m => m.Name("Mutation"))
                 .AddTypeExtension<StudentMutation>()
                 .AddTypeExtension<AuthorizationMutation>()
-            .AddFairyBread();
+            .AddFairyBread()
+            .AddErrorFilter<GraphQLErrorFilter>()
+            .AddDiagnosticEventListener<ErrorLoggingDiagnosticsEventListener>();
 
-        services.AddErrorFilter<GraphQLErrorFilter>();
         return services;
     }
 }

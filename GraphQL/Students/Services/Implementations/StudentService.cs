@@ -52,7 +52,9 @@ public class StudentService : IStudentService
 
     public async Task<bool> RemoveStudent(Guid studentId, CancellationToken cancellationToken)
     {
-        var student = await _dbContext.Students.SingleAsync(s => s.Id == studentId, cancellationToken);
+        var student = await _dbContext.Students.SingleOrDefaultAsync(s => s.Id == studentId, cancellationToken);
+        if (student == null)
+            throw new BusinessLogicException("Data mahasiswa tidak ditemukan");
         _dbContext.Remove(student);
         await _dbContext.SaveChangesAsync(cancellationToken);
         return true;

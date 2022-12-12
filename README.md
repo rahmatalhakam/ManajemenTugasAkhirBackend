@@ -3,7 +3,7 @@ Todo
 2. create authorization on each graphql req🆗
 3. create unit test
 4. mbuat data seeder atleast utk admin 🆗
-5. add modifiedBy dan createdBy
+5. add modifiedBy dan createdBy 🆗
 6. Refresh token
 
 Bugs or features?
